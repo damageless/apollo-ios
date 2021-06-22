@@ -91,7 +91,7 @@ private func decode(fields: [GraphQLField],
   let firstField = fields[0]
 
   do {
-    let value = object[firstField.responseKey] ?? NSNull
+    let value = object[firstField.responseKey]
 
     return try complete(value: value,
                         ofType: firstField.type,
