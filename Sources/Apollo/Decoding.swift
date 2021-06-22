@@ -91,9 +91,7 @@ private func decode(fields: [GraphQLField],
   let firstField = fields[0]
 
   do {
-    guard let value = object[firstField.responseKey] else {
-      throw JSONDecodingError.missingValue
-    }
+    let value = object[firstField.responseKey] ?? NSNull
 
     return try complete(value: value,
                         ofType: firstField.type,
